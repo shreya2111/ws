@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <title>Water Supply 24*7 Project</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <script src="/js/ie-emulation-modes-warning.js"></script>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+     $('input[type="checkbox"]').on('change', function() {
+   $('input[type="checkbox"]').not(this).prop('checked', false);
+});
+    </script>
+    <link href="/css/carousel.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body style= "background-color: #BACDD6">
+    
+
+<div class="container">
+
+<div class="page-header">
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Water 24*7</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigator<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/admin">Administrator</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <!--<li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>-->
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+</div>
+<br>
+<!-- Registration form - START -->
+<div class="container">
+    <div class="row">
+        <form role="form" method="POST" action="/newq">
+            <div class="col-lg-6" style="padding-left:0px">
+                <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+                <div class="form-group">
+                    <label for="InputName">Enter the approx. number of people living in your region</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="InputHumans" id="InputHumans" placeholder="Enter Number of People" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Enter the approx. number of livestock in your region</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="InputLivestock" name="InputLivestock" placeholder="Enter Number of Livestock" require>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Enter the average household income of your region</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" min="10" id="InputIncome" name="InputIncome" placeholder="Enter Household Income" require>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Enter the number of large institutions(school, hospital, hotels, restaurants, etc.) present in your region</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" min="18" max="100" id="InputIns" name="InputIns" placeholder="Enter Number of Institutions" require>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <label for="InputEmail">Water Source : </label>
+                <br>
+                <label for="InputEmail">Ground Water</label>
+                <input type="checkbox" name="check1" id="check1" value= "yes" />
+                <br>
+                <label for="InputEmail">River Water</label>
+                <input type="checkbox" name="check2" id="check2" value= "yes" />
+                 <select name="distance" id="dis">
+                    <option value="2-6">2-6 kms</option>
+                    <option value="6-10">6-10 kms</option>
+                    <option value="10-14">10-14 kms</option>
+                    <option value="14-20">14-20 kms</option>
+                  </select>
+                 <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+            </div>
+        </form>
+        <div class="col-lg-5 col-md-push-1">
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    <strong><span class="glyphicon glyphicon-ok"></span> Success! Message sent.</strong>
+                </div>
+                <div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-remove"></span><strong> Error! Please check all page inputs.</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Registration form - END -->
+
+</div>
+
+<footer style = "padding:15px">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="/js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

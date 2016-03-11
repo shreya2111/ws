@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body   style ="background-color: lavender">
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/adminpg">
+                        Welcome Admin..!!
+                    </a>
+                </li>
+                <li>
+                    <a href="/browse">Browse various queries</a>
+                </li>
+                <li>
+                    <a href="/browse">Delete any query</a>
+                </li>
+                <li>
+                    <a href="/browse">Check the status of queries</a>
+                </li>
+                <li>
+                    <a href="/review">Review the reports</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Hey Admin..!!</h1>
+                        <p>Welcome to the admin dashboard of Water Supply 24x7 project By DIC. Here you can browse the submitted queries and can delete them. You can also check the status of the queries.</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
+                        <br>
+                        <hr style =" border-top: 5px solid">
+                        <form action="/delete" method="POST"> 
+                         <% for(var d=0; d<view_data1.length; d++)
+                            {  %>   
+                        <blockquote style="padding-left : 0px;padding-bottom : 0px">List of Submitted queries</blockquote>
+                        <h4 style : "margin-left : auto"><span class="glyphicon glyphicon-star">&nbsp;</span>
+                        <%-  view_data1[d].Folder_Name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <% if(view_data1[d].status == 1){ %>
+                        <span class="glyphicon glyphicon-ok">&nbsp; Final report not generated &nbsp;</span><%}%>
+                        <% if(view_data1[d].status == 2){ %>
+                        <span class="glyphicon glyphicon-ok">&nbsp; Final report under review &nbsp;</span><%}%>
+                        <% if(view_data1[d].status == 3){ %>
+                        <span class="glyphicon glyphicon-ok">&nbsp; Final report after review &nbsp;</span><%}%>   
+                        <a class="btn btn-primary" href="/download" role="button">Download</a>&nbsp;
+                        <input type="checkbox" name="deleted" value="<% view_data1[d].Folder_Name %>">
+                        <input class ="btn btn-danger" type="submit" value="Delete"></h4>
+                    </form>
+                        <% } %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
