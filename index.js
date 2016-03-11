@@ -5,7 +5,7 @@
 var express = require('express');
 var ws = express();
 var bodyParser = require('body-parser');
-var port = 3000;
+var port = process.env.PORT || 5000;
 var pg =require('pg');
 var conString = "postgres://postgres:anurag@localhost/Water24X7"
 var client = new pg.Client(conString);
